@@ -18,20 +18,15 @@ CodeMirror.defineMode("ada", function() {
     return obj;
   }
   var keywords = words(
-    "absolute and array asm begin case const constructor destructor div do " +
-    "downto else end file for function goto if implementation in inherited " +
-    "inline interface label mod nil not object of operator or packed procedure " +
-    "program record reintroduce repeat self set shl shr string then to type " +
-    "unit until uses var while with xor as class dispinterface except exports " +
-    "finalization finally initialization inline is library on out packed " +
-    "property raise resourcestring threadvar try absolute abstract alias " +
-    "assembler bitpacked break cdecl continue cppdecl cvar default deprecated " +
-    "dynamic enumerator experimental export external far far16 forward generic " +
-    "helper implements index interrupt iocheck local message name near " +
-    "nodefault noreturn nostackframe oldfpccall otherwise overload override " +
-    "pascal platform private protected public published read register " +
-    "reintroduce result safecall saveregisters softfloat specialize static " +
-    "stdcall stored strict unaligned unimplemented varargs virtual write");
+    "abort else new return abs elsif not reverse abstract end null " + 
+    "accept entry select access exception of separate " + 
+    "aliased exit or some all others subtype and for out synchronized " + 
+    "array function overriding at tagged generic package task " + 
+    "begin goto pragma terminate body private then " + 
+    "if procedure type case in protected constant interface  until " + 
+    "is raise use declare range delay limited record when " + 
+    "delta loop rem while digits renames with " + 
+    "do mod requeue xor");
   var atoms = {"null": true};
 
   var isOperatorChar = /[+\-*&%=<>!?|\/]/;

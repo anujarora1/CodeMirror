@@ -27,27 +27,25 @@
 
 
 <div><textarea id="code" name="code">
-(* Example Ada code *)
 
-while a <> b do writeln('Waiting');
- 
-if a > b then 
-  writeln('Condition met')
-else 
-  writeln('Condition not met');
- 
-for i := 1 to 10 do 
-  writeln('Iteration: ', i:1);
- 
-repeat
-  a := a + 1
-until a = 10;
- 
-case i of
-  0: write('zero');
-  1: write('one');
-  2: write('two')
-end;
+  with Ada_Semantic_Tree.Std_Entities;
+  with Ada_Semantic_Tree.Generics;
+
+  package body Ada_Semantic_Tree.Assistants is
+
+  procedure Register_Ada_Assistants
+       (Db                 : Construct_Database_Access;
+        Std_Entities_Files : Virtual_File) is
+     begin
+        Ada_Semantic_Tree.Cache.Register_Assistant (Db);
+        Ada_Semantic_Tree.Generics.Register_Assistant (Db);
+        Ada_Semantic_Tree.Interfaces.Register_Assistant (Db);
+        Ada_Semantic_Tree.Std_Entities.Register_Assistant
+          (Db, Std_Entities_Files);
+     end Register_Ada_Assistants;
+  
+  end Ada_Semantic_Tree.Assistants;
+
 </textarea></div>
 
     <script>
